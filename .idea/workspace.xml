@@ -11,18 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="843d37ef-df86-4532-a2c8-cc3180ef3323" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pruning_tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pruning_tool.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_define/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prune.sh" beforeDir="false" afterPath="$PROJECT_DIR$/prune.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruning.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pruning_analysis_tools/plot_csv.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruning_analysis_tools/plot_csv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train_module/train_with_insight_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_module/train_with_insight_face.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_space/model_train_best/2019-09-29-05-31_SVGArcFace-O1-b0.4s40t1.1_fc_0.4_112x112_2019-09-27-Adult-padSY-Bus_fResNet50v3cv-d512_pytorch_iter_360000.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_mobilefacenet_lzc.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_mobilefacenet_lzc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_space/finetune/2020-09-07-11-42/log/2020-09-07-11-42/events.out.tfevents.1599450180.yeluyue" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/finetune/2020-09-07-11-42/log/2020-09-07-11-42/events.out.tfevents.1599450180.yeluyue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
