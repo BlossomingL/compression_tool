@@ -78,7 +78,7 @@ def main():
     parser.add_argument('--pruned_checkpoint', type=str, default=None, help='剪枝后的模型文件路径')
     parser.add_argument('--train_data_path', type=str, default=None, help='finetune所需训练集的路径')
     parser.add_argument('--milestones', type=str, default='12,15,18', help='规定在第几个epoch学习率下降')
-    parser.add_argument('--train_batch_size', type=int, default=128, help='训练batch size')
+    parser.add_argument('--train_batch_size', type=int, default=64, help='训练batch size')
     parser.add_argument('--pin_memory', type=bool, default=True)
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--work_path', type=str, default='work_space/finetune', help='训练过程产生的文件存放目录')

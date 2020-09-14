@@ -6,6 +6,7 @@ sys.path.append(os.path.dirname(__file__) + os.sep + '../')
 from data.train_data.ms1m_10k_loader import get_train_loader, get_val_data
 from work_space.pruned_define_model.make_pruned_resnet50_imagenet import resnet_50, Arcface, l2_norm
 from work_space.pruned_define_model.make_pruned_mobilefacenet_y2 import Pruned_MobileFaceNet_y2
+from work_space.pruned_define_model.make_pruned_resnet50 import pruned_fresnet50_v3
 from data.train_data.verifacation import evaluate
 import torch
 from torch import optim
@@ -35,7 +36,7 @@ class face_learner(object):
                 print('pruned mobilefacenet_y2 mdoel generated')
 
             elif args.model == 'resnet50':
-                self.model = fresnet50_v3().to(args.device)
+                self.model = pruned_fresnet50_v3().to(args.device)
                 print('pruned ResNet-50(公司) model generated')
 
         else:

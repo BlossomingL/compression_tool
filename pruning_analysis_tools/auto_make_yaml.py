@@ -364,7 +364,7 @@ def find_min_index(arr):
 
 def main():
     # config_yaml('/home/user1/linx/program/LightFaceNet/work_space/sensitivity_data/mobilenetv3_0.6613/sensitivity_mobilenetv3.csv', 0.40, mode='mobilenetv3')
-    config_yaml('/home/yeluyue/lz/program/compression_tool/work_space/sensitivity_data/sensitivity_mobilefacenet_y2_2020-09-04-13-08.csv', 0.985, mode='mobilefacenet', img_size=(112, 112))    # config_yaml('../work_space/sensitivity_data/mobilefacenet_y2_zkx_0.7889/fpgm/sensitivity_mobilefacenet_y2_2019-11-05-06-30.csv', 0.721, mode='mobilefacenet_y2', img_size=(112, 112))
+    config_yaml('/home/linx/program/z-prunning/compression_tool/work_space/sensitivity_data/sensitivity_resnet50_2020-09-07-17-13.csv', 0.989, mode='resnet50', img_size=(112, 112))    # config_yaml('../work_space/sensitivity_data/mobilefacenet_y2_zkx_0.7889/fpgm/sensitivity_mobilefacenet_y2_2019-11-05-06-30.csv', 0.721, mode='mobilefacenet_y2', img_size=(112, 112))
 
 
 if __name__ == '__main__':

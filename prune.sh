@@ -134,27 +134,6 @@ python main.py    --mode sa \
                   --fpgm \
                   --data_source lfw
 
-# 对mobilefacenet_y2剪枝
-python main.py    --mode prune \
-                  --model mobilefacenet_y2 \
-                  --best_model_path work_space/finetune/2020-09-03-10-06_mobilefacenet_y2_baseline/model/model_accuracy:0.9866666666666667_step:182160_best_acc_lfw.pth \
-                  --save_model_pt \
-                  --test_root_path /home/yeluyue/lz/dataset/face_recognition/ms1m_10k \
-                  --data_source lfw
-
-
-# 对mobilefacenet_y2 finetune
-python main.py  --mode finetune \
-                --lr 0.01 \
-                --epoch 20 \
-                --train_data_path /home/yeluyue/lz/dataset/face_recognition/ms1m_10k \
-                --test_root_path /home/yeluyue/lz/dataset/face_recognition/ms1m_10k \
-                --model mobilefacenet_y2 \
-                --pruned_checkpoint  /home/yeluyue/lz/program/compression_tool/work_space/pruned_model/model_mobilefacenet_y2.pt\
-                --head_path work_space/finetune/2020-09-03-10-06_mobilefacenet_y2_baseline/model/head_2020-09-03-21-16_accuracy:0.9866666666666667_step:182160_best_acc_lfw.pth \
-                --finetune_pruned_model \
-                --data_source lfw
-
 # 重新训练一个resnet_50(公司)模型
 python main.py  --mode finetune \
                 --lr 0.1 \
@@ -162,3 +141,31 @@ python main.py  --mode finetune \
                 --train_data_path /home/linx/dataset/face_recognition/ms1m_10k/ \
                 --test_root_path /home/linx/dataset/face_recognition/ms1m_10k \
                 --model resnet50
+
+# 对公司resnet50模型稀疏度分析
+python main.py    --mode sa \
+                  --model resnet50 \
+                  --best_model_path work_space/finetune/2020-09-04-14-22_resnet50_company_baseline/model/model_accuracy:0.9923333333333334_step:117760_best_acc_lfw.pth \
+                  --test_root_path /home/linx/dataset/face_recognition/ms1m_10k \
+                  --fpgm \
+                  --data_source lfw
+
+# 对公司resnet50模型剪枝
+python main.py    --mode prune \
+                  --model resnet50 \
+                  --best_model_path /home/linx/program/z-prunning/compression_tool/work_space/finetune/2020-09-04-14-22_resnet50_company_baseline/model/model_accuracy:0.9923333333333334_step:117760_best_acc_lfw.pth \
+                  --save_model_pt \
+                  --test_root_path /home/linx/dataset/face_recognition/ms1m_10k \
+                  --data_source lfw
+
+# 对公司resnet50 finetune /home/linx/program/z-prunning/compression_tool/work_space/pruned_model/model_resnet50.pt
+python main.py  --mode finetune \
+                --lr 0.01 \
+                --epoch 20 \
+                --train_data_path /home/linx/dataset/face_recognition/ms1m_10k/ \
+                --test_root_path /home/linx/dataset/face_recognition/ms1m_10k \
+                --model resnet50 \
+                --data_source lfw \
+                --finetune_pruned_model \
+                --pruned_checkpoint /home/linx/program/z-prunning/compression_tool/work_space/pruned_model/model_resnet50.pt \
+                --head_path /home/linx/program/z-prunning/compression_tool/work_space/finetune/2020-09-04-14-22_resnet50_company_baseline/model/head_2020-09-05-05-07_accuracy:0.9923333333333334_step:117760_best_acc_lfw.pth

@@ -123,6 +123,18 @@ class BasicBlock_v3(nn.Module):
         return out
 
 
+class GDC(nn.Module):
+    def __init__(self, in_c, out_c, kernel=(1, 1), stride=(1, 1), padding=(0, 0), groups=1):
+        super(GDC, self).__init__()
+        self.conv = nn.Conv2d(in_c, out_channels=out_c, kernel_size=kernel, stride=stride, padding=padding, groups=groups, bias=False)
+        self.bn = nn.BatchNorm2d(out_c)
+
+    def forward(self, x):
+        x = self.conv(x)
+        x = self.bn(x)
+        return x
+
+
 # suitable for input size 112x112
 class ResNet(nn.Module):
 
@@ -154,7 +166,8 @@ class ResNet(nn.Module):
         # ks = ((input_size[0]+15)//16, (input_size[1]+15)//16)
         # print("kernel size{}".format(ks))
         ks = 7
-        self.fc1 = nn.Conv2d(512*block.expansion, embedding_size, ks, bias=False)
+        # self.fc1 = nn.Conv2d(512*block.expansion, embedding_size, ks, bias=False)
+        self.fc1 = GDC(512 * block.expansion, embedding_size, kernel=(ks, ks), groups=512)
         self.ft1 = Flatten()
         self.bn4 = nn.BatchNorm1d(embedding_size, eps=2e-5, momentum=0.9)
         # self.fc = nn.
@@ -252,7 +265,7 @@ class ResNet(nn.Module):
         return x
 
 
-def fresnet50_v3(**kwargs):
+def pruned_fresnet50_v3(**kwargs):
     """Constructs a ResNet-50 model.
 
     Args:
@@ -270,13 +283,22 @@ def fresnet50_v3(**kwargs):
                  'small': [64, 7, 64, 7, 64, 7, 64, 26, 128, 13, 128, 13, 128,
                            13, 128, 52, 256, 26, 256, 26, 256, 26, 256, 26, 256,
                            26, 256, 26, 256, 26, 256, 26, 256, 26, 256, 26, 256,
-                           26, 256, 26, 256, 26, 256, 103, 512, 52, 512, 52, 512]}
+                           26, 256, 26, 256, 26, 256, 103, 512, 52, 512, 52, 512],
+                 'medium_1': [64, 32, 64, 20, 64, 52, 64, 90, 128, 26, 128, 103,
+                               128, 103, 128, 231, 256, 52, 256, 128, 256, 231, 256,
+                               180, 256, 52, 256, 180, 256, 103, 256, 52, 256, 103,
+                               256, 52, 256, 103, 256, 52, 256, 154, 256, 359, 512,
+                               359, 512, 256, 512],
+                 'small_1': [64, 13, 64, 7, 64, 13, 64, 77, 128, 13, 128, 26, 128,
+                             26, 128, 180, 256, 52, 256, 77, 256, 52, 256, 77, 256,
+                             26, 256, 26, 256, 26, 256, 26, 256, 52, 256, 26, 256,
+                             52, 256, 26, 256, 26, 256, 308, 512, 103, 512, 103, 512]}
 
-    model = ResNet(BasicBlock_v3, [3, 4, 14, 3], keep_dict['small'], **kwargs)
-    model.load_state_dict(torch.load('/media/user1/Ubuntu 16.0/resnet50/model_resnet50_66.7M_0.1.pt'))
+    model = ResNet(BasicBlock_v3, [3, 4, 14, 3], keep_dict['small_1'], **kwargs)
+    # model.load_state_dict(torch.load('/media/user1/Ubuntu 16.0/resnet50/model_resnet50_66.7M_0.1.pt'))
 
     return model
 
 
 if __name__ == '__main__':
-    fresnet50_v3()
+    pruned_fresnet50_v3()

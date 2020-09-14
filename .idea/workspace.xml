@@ -10,7 +10,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843d37ef-df86-4532-a2c8-cc3180ef3323" name="Default Changelist" comment="" />
+    <list default="true" id="843d37ef-df86-4532-a2c8-cc3180ef3323" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pruning_tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pruning_tool.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prune.sh" beforeDir="false" afterPath="$PROJECT_DIR$/prune.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_module/train_with_insight_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_module/train_with_insight_face.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_space/finetune/2020-09-07-11-42/log/2020-09-07-11-42/events.out.tfevents.1599450180.yeluyue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_space/layers_out/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/layers_out/out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_resnet50.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_resnet50.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_space/sensitivity_data/sensitivity_mobilefacenet_y2_2020-09-04-13-08.csv" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/sensitivity_data/mobilefacenet_y2_company_0.9867/sensitivity_mobilefacenet_y2_2020-09-04-13-08.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yaml_file/auto_yaml.yaml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,13 +55,6 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet50_imagenet_0.9773/L1Rank" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet50_imagenet_0.9773/fpgm" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet50_imagenet_0.9773" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet100_0.7710/fpgm" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet100_0.7710/L1Rank" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/work_space/head" />
       <recent name="$PROJECT_DIR$/work_space/model_train_best" />
@@ -56,8 +62,15 @@
       <recent name="$PROJECT_DIR$/work_space" />
       <recent name="$PROJECT_DIR$/pruning_analysis_tools" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/mobilefacenet_y2_company_0.9923" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet50_imagenet_0.9773/L1Rank" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet50_imagenet_0.9773/fpgm" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet50_imagenet_0.9773" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet100_0.7710/fpgm" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.auto_make_yaml">
     <configuration name="auto_make_yaml" type="PythonConfigurationType" factoryName="Python">
       <module name="pruning_tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -92,7 +105,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="--mode finetune --lr 0.01 --epoch 20 --train_data_path $PROJECT_DIR$/../../dataset/face_recognition/ms1m_10k --test_root_path $PROJECT_DIR$/../../dataset/face_recognition/ms1m_10k --model mobilefacenet_y2 --pruned_checkpoint $PROJECT_DIR$/work_space/pruned_model/model_mobilefacenet_y2.pt --head_path work_space/finetune/2020-09-03-10-06_mobilefacenet_y2_baseline/model/head_2020-09-03-21-16_accuracy:0.9866666666666667_step:182160_best_acc_lfw.pth --finetune_pruned_model --data_source lfw" />
+      <option name="PARAMETERS" value="--mode sa --model resnet50 --best_model_path work_space/finetune/2020-09-04-14-22_resnet50_company_baseline/model/model_accuracy:0.9923333333333334_step:117760_best_acc_lfw.pth --test_root_path $USER_HOME$/dataset/face_recognition/ms1m_10k --fpgm --data_source lfw" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -142,7 +155,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="make_pruned_resnet50_imagenet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="make_pruned_resnet50" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pruning_tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -154,7 +167,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_resnet50_imagenet.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_resnet50.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,43 +197,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pruning_tool" />
+    <configuration name="prune.sh" type="ShConfigurationType" temporary="true">
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/prune.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
       <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/commom_utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/commom_utils/utils.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.auto_make_yaml" />
       <item itemvalue="Python.plot_csv" />
-      <item itemvalue="Python.utils" />
-      <item itemvalue="Python.make_pruned_resnet50_imagenet" />
       <item itemvalue="Python.make_pruned_mobilefacenet_y2" />
       <item itemvalue="Python.make_pruned_mobilefacenet_lzc" />
+      <item itemvalue="Shell Script.prune.sh" />
+      <item itemvalue="Python.make_pruned_resnet50" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.make_pruned_resnet50" />
+        <item itemvalue="Shell Script.prune.sh" />
         <item itemvalue="Python.make_pruned_mobilefacenet_y2" />
         <item itemvalue="Python.make_pruned_mobilefacenet_lzc" />
         <item itemvalue="Python.plot_csv" />
-        <item itemvalue="Python.make_pruned_resnet50_imagenet" />
-        <item itemvalue="Python.utils" />
       </list>
     </recent_temporary>
   </component>
@@ -251,34 +254,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="416" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599450021303">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599459200222">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599181763592" />
+    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599459200222" />
     <state x="416" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/69.24.1851.1056@69.24.1851.1056" timestamp="1599450021303" />
+    <state x="693" y="345" width="590" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599458797480">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="693" y="345" width="590" height="414" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1599458797480" />
     <state x="1188" y="357" key="FileChooserDialogImpl" timestamp="1599204527817">
       <screen x="69" y="24" width="1851" height="1056" />
     </state>
     <state x="1188" y="357" key="FileChooserDialogImpl/69.24.1851.1056@69.24.1851.1056" timestamp="1599204527817" />
-    <state width="1374" height="360" key="GridCell.Tab.0.bottom" timestamp="1599450166874">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="313" key="GridCell.Tab.0.bottom" timestamp="1599615720012">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="373" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1599186324721" />
+    <state width="1826" height="313" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1599615720012" />
     <state width="1374" height="360" key="GridCell.Tab.0.bottom/69.24.1851.1056@69.24.1851.1056" timestamp="1599450166874" />
-    <state width="1374" height="360" key="GridCell.Tab.0.center" timestamp="1599450166874">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="313" key="GridCell.Tab.0.center" timestamp="1599615720012">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="373" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1599186324720" />
+    <state width="1826" height="313" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1599615720012" />
     <state width="1374" height="360" key="GridCell.Tab.0.center/69.24.1851.1056@69.24.1851.1056" timestamp="1599450166874" />
-    <state width="1374" height="360" key="GridCell.Tab.0.left" timestamp="1599450166874">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="313" key="GridCell.Tab.0.left" timestamp="1599615720012">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="373" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1599186324717" />
+    <state width="1826" height="313" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1599615720012" />
     <state width="1374" height="360" key="GridCell.Tab.0.left/69.24.1851.1056@69.24.1851.1056" timestamp="1599450166874" />
-    <state width="1374" height="360" key="GridCell.Tab.0.right" timestamp="1599450166874">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="313" key="GridCell.Tab.0.right" timestamp="1599615720012">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="373" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1599186324720" />
+    <state width="1826" height="313" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1599615720012" />
     <state width="1374" height="360" key="GridCell.Tab.0.right/69.24.1851.1056@69.24.1851.1056" timestamp="1599450166874" />
     <state width="1374" height="318" key="GridCell.Tab.1.bottom" timestamp="1599204269000">
       <screen x="69" y="24" width="1851" height="1056" />
