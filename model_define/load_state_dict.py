@@ -8,6 +8,7 @@ from model_define.MobileFaceNet import MobileFaceNet
 from model_define.model import MobileFaceNet_sor, ResNet34, MobileFaceNet_y2
 from model_define.MobileNetV3 import MobileNetV3_Large
 from model_define.resnet50_imagenet import resnet_50
+from model_define.mobilefacenet_y2_ljt.mobilefacenet_big import MobileFaceNet_y2_ljt
 import torch
 
 
@@ -41,8 +42,13 @@ def load_state_dict(args):
     elif args.model == 'resnet34_lzc':
         model = fresnet34_v3((80, 80))
 
+    elif args.model == 'mobilefacenet_y2_ljt':
+        model = MobileFaceNet_y2_ljt()
+
     else:
         print('不支持此模型剪枝！')
+
+    print('load {}\'s checkpoint'.format(args.model))
 
     state_dict = torch.load(args.best_model_path, map_location=args.device)
     if args.from_data_parallel:

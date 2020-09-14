@@ -20,7 +20,8 @@ class TestOnFaceRecognition:
         self.model = model
         self.test_data_root = test_data_root
         self.test_pair_list = test_pair_list
-        self.image_list_path = test_pair_list.replace('pair','')
+        # self.image_list_path = test_pair_list.replace('pair','')
+        self.image_list_path = test_pair_list
         self.image_pair_path = test_pair_list
         self.dname = dname
         self.embedding_result = {}

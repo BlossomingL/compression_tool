@@ -45,7 +45,8 @@ def main():
     parser.add_argument('--img_list_label_path', default=None, help='测试集pair list路径')
     parser.add_argument('--model', default=None,
                         choices=['mobilefacenet', 'resnet34', 'mobilefacenet_y2', 'resnet50', 'resnet100',
-                                 'mobilefacenet_lzc', 'mobilenetv3', 'resnet34_lzc', 'resnet50_imagenet'], help='对哪个模型剪枝')
+                                 'mobilefacenet_lzc', 'mobilenetv3', 'resnet34_lzc', 'resnet50_imagenet',
+                                 'mobilefacenet_y2_ljt'], help='对哪个模型剪枝')
 
     parser.add_argument('--is_save', default=False, action='store_true', help='是否保存模型文件')
 
