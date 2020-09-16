@@ -20,5 +20,5 @@ def test(args, model):
         return acc_lfw
     else:
         test = TestOnFaceRecognition(model, args.test_root_path, args.img_list_label_path, args.data_source)
-        accuracy = test.test3(args.test_batch_size)
+        accuracy = test.test(args.test_batch_size)
         return accuracy

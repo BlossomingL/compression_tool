@@ -77,7 +77,8 @@ class TestOnFaceRecognition:
                     dict_name_features[key] = feature
 
         return dict_name_features
-    ############################################################################################################
+
+    # ###########################################################################################################
     def test2(self, batch_size):
         self.extract_image_feature()
         accuarcy = self.make_comparation()

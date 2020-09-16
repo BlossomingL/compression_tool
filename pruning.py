@@ -24,8 +24,8 @@ def prune(args):
     if args.fpgm:
         print('使用fpgm算法剪枝')
     if args.cal_flops_and_forward:
-        flops, params = cal_flops(model, [1, 3, 112, 112])
-        forward_time = test_speed(model)
+        flops, params = cal_flops(model, [1, 3, 144, 122])
+        forward_time = test_speed(model, [1, 3, 144, 122])
         print('剪枝前前向时间为{}ms, flops={}, params={}'.format(forward_time, flops, params))
     conv_dict = {}
 
@@ -88,7 +88,7 @@ def prune(args):
         acc = test(args, model)
         print('剪枝后acc为：{}'.format(acc))
 
-        flops, params = cal_flops(model, [1, 3, 112, 112])
+        flops, params = cal_flops(model, [1, 3, 144, 122])
         forward_time = 0
         print('剪枝后前向时间为{}ms, flops={}, params={}'.format(forward_time, flops, params))
 

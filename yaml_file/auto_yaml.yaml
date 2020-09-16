@@ -2,9 +2,13 @@ extensions:
   net_thinner:
     arch: None
     class: FilterRemover
-    dataset: 112x112
+    dataset: 144x122
     thinning_func_str: remove_filters
 policies:
+- epochs:
+  - 0
+  pruner:
+    instance_name: filter_pruner_20
 - epochs:
   - 0
   pruner:
@@ -13,6 +17,14 @@ policies:
   - 0
   pruner:
     instance_name: filter_pruner_40
+- epochs:
+  - 0
+  pruner:
+    instance_name: filter_pruner_50
+- epochs:
+  - 0
+  pruner:
+    instance_name: filter_pruner_60
 - epochs:
   - 0
   pruner:
@@ -30,53 +42,77 @@ policies:
   extension:
     instance_name: net_thinner
 pruners:
+  filter_pruner_20:
+    class: L1RankedStructureParameterPruner
+    desired_sparsity: 0.2
+    group_type: Filters
+    weights:
+    - conv_34.conv.conv.weight
+    - conv_4.model.6.conv.conv.weight
   filter_pruner_30:
     class: L1RankedStructureParameterPruner
     desired_sparsity: 0.3
     group_type: Filters
     weights:
-    - layer3.0.conv1.weight
+    - conv_45.conv.conv.weight
   filter_pruner_40:
     class: L1RankedStructureParameterPruner
     desired_sparsity: 0.4
     group_type: Filters
     weights:
-    - layer2.0.conv1.weight
-    - layer4.0.conv1.weight
+    - conv_4.model.2.conv.conv.weight
+    - conv_4.model.3.conv.conv.weight
+  filter_pruner_50:
+    class: L1RankedStructureParameterPruner
+    desired_sparsity: 0.5
+    group_type: Filters
+    weights:
+    - conv_3.model.2.conv.conv.weight
+  filter_pruner_60:
+    class: L1RankedStructureParameterPruner
+    desired_sparsity: 0.6
+    group_type: Filters
+    weights:
+    - conv2_dw.model.1.conv.conv.weight
+    - conv_23.conv.conv.weight
+    - conv_4.model.5.conv.conv.weight
+    - conv_4.model.7.conv.conv.weight
+    - conv_4.model.10.conv.conv.weight
+    - conv_4.model.12.conv.conv.weight
+    - conv_4.model.13.conv.conv.weight
+    - conv_4.model.14.conv.conv.weight
   filter_pruner_70:
     class: L1RankedStructureParameterPruner
     desired_sparsity: 0.7
     group_type: Filters
     weights:
-    - layer3.2.conv1.weight
-    - layer3.4.conv1.weight
+    - conv_4.model.0.conv.conv.weight
+    - conv_4.model.1.conv.conv.weight
+    - conv_4.model.4.conv.conv.weight
+    - conv_4.model.9.conv.conv.weight
+    - conv_4.model.15.conv.conv.weight
   filter_pruner_80:
     class: L1RankedStructureParameterPruner
     desired_sparsity: 0.8
     group_type: Filters
     weights:
-    - layer1.0.conv1.weight
-    - layer1.2.conv1.weight
-    - layer2.2.conv1.weight
-    - layer2.3.conv1.weight
-    - layer3.1.conv1.weight
-    - layer3.3.conv1.weight
-    - layer3.9.conv1.weight
-    - layer3.11.conv1.weight
-    - layer4.1.conv1.weight
-    - layer4.2.conv1.weight
+    - conv_3.model.5.conv.conv.weight
+    - conv_3.model.7.conv.conv.weight
+    - conv_5.model.3.conv.conv.weight
   filter_pruner_90:
     class: L1RankedStructureParameterPruner
     desired_sparsity: 0.9
     group_type: Filters
     weights:
-    - layer1.1.conv1.weight
-    - layer2.1.conv1.weight
-    - layer3.5.conv1.weight
-    - layer3.6.conv1.weight
-    - layer3.7.conv1.weight
-    - layer3.8.conv1.weight
-    - layer3.10.conv1.weight
-    - layer3.12.conv1.weight
-    - layer3.13.conv1.weight
+    - conv2_dw.model.0.conv.conv.weight
+    - conv_3.model.0.conv.conv.weight
+    - conv_3.model.1.conv.conv.weight
+    - conv_3.model.3.conv.conv.weight
+    - conv_3.model.4.conv.conv.weight
+    - conv_3.model.6.conv.conv.weight
+    - conv_4.model.8.conv.conv.weight
+    - conv_4.model.11.conv.conv.weight
+    - conv_5.model.0.conv.conv.weight
+    - conv_5.model.1.conv.conv.weight
+    - conv_5.model.2.conv.conv.weight
 version: 1

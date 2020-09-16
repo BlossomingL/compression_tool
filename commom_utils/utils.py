@@ -30,9 +30,9 @@ def get_time():
     return (str(datetime.now())[:-10]).replace(' ', '-').replace(':', '-')
 
 
-def test_speed(model, device='gpu', test_time=10000):
+def test_speed(model, shape=[1, 3, 122, 122], device='gpu', test_time=10000):
     model.eval()
-    inputs = torch.rand([1, 3, 112, 112])
+    inputs = torch.rand(shape)
     if device == 'gpu':
         model = model.to('cuda')
         inputs = inputs.to('cuda')
