@@ -9,6 +9,7 @@ from model_define.model import MobileFaceNet_sor, ResNet34, MobileFaceNet_y2
 from model_define.MobileNetV3 import MobileNetV3_Large
 from model_define.resnet50_imagenet import resnet_50
 from model_define.mobilefacenet_y2_ljt.mobilefacenet_big import MobileFaceNet_y2_ljt
+from model_define.shufflefacenet_v2_ljt.ShuffleFaceNetV2 import ShuffleFaceNetV2
 import torch
 
 
@@ -44,6 +45,9 @@ def load_state_dict(args):
 
     elif args.model == 'mobilefacenet_y2_ljt':
         model = MobileFaceNet_y2_ljt()
+
+    elif args.model == 'shufflenet_v2_ljt':
+        model = ShuffleFaceNetV2(512, 2.0, (144, 122))
 
     else:
         print('不支持此模型剪枝！')
