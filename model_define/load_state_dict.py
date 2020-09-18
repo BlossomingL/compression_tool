@@ -46,7 +46,7 @@ def load_state_dict(args):
     elif args.model == 'mobilefacenet_y2_ljt':
         model = MobileFaceNet_y2_ljt()
 
-    elif args.model == 'shufflenet_v2_ljt':
+    elif args.model == 'shufflefacenet_v2_ljt':
         model = ShuffleFaceNetV2(512, 2.0, (144, 122))
 
     else:
