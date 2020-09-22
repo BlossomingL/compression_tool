@@ -71,6 +71,9 @@ def config_yaml(csv_name, expect_acc, mode='mobilefacenet', img_size=(80, 80)):
     elif mode == 'mobilenetv3':
         res_spa = create_sparsity2weight_mobilenetv3(sparsity, data, expect_acc)
 
+    elif mode == 'shufflefacenet':
+        res_spa = create_sparsity2weight_shufflefacenet(sparsity, data, expect_acc, mode)
+
     yaml_dict = create_yaml_dict(res_spa, img_size)
 
     with open('../yaml_file/auto_yaml.yaml', 'w', encoding='utf-8') as f:
@@ -256,33 +259,6 @@ def create_sparsity2weight_facenet(sparsity, data, expect_acc):
                     res_temp.append(winfo1)
                     break
 
-    #     elif winfo.name.find('project') != -1:
-    #         # print(winfo.name)
-    #         if flag:
-    #             first_head = winfo.name.split('.')[0]
-    #             min_temp = winfo.sparsity
-    #             min_name = winfo.name
-    #             project_seg.append(winfo)
-    #             flag = False
-    #             continue
-    #         if (winfo.name.split('.')[0] == first_head or winfo.name.split('.')[0][-1] == first_head[-1]) and winfo.sparsity < min_temp:
-    #             min_temp = winfo.sparsity
-    #             min_name = winfo.name
-    #             project_seg.append(winfo)
-    #         elif winfo.name.split('.')[0] != first_head and winfo.name.split('.')[0][-1] != first_head[-1]:
-    #             for x in project_seg:
-    #                 x.sparsity = min_temp
-    #                 res_temp.append(x)
-    #             project_seg = []
-    #             first_head = winfo.name.split('.')[0]
-    #             min_temp = winfo.sparsity
-    #             min_name = winfo.name
-    #             project_seg.append(winfo)
-    #         else:
-    #             project_seg.append(winfo)
-    #
-    # res_temp.append(WInfo(min_name, min_temp))
-
     # 网络的第一个卷积层也剪枝
     # res_temp.append(res[0])
 
@@ -347,6 +323,83 @@ def create_sparsity2weight_mobilenetv3(sparsity, data, expect_acc):
     return res_spa
 
 
+def create_sparsity2weight_shufflefacenet(sparsity, data, expect_acc, mode):
+    # 初始化一个敏感度字典，键为权值名称，值为敏感度值（0.1～0.9对应的精度值）
+    sensitivity = {}
+    for x in data.values:
+        sensitivity[x[0]] = []
+
+    # 初始化一个敏感度字典，键为稀疏度（从0.1～0.9），值为相稀疏度对应的权值名称
+    res_spa = {}
+    for x in sparsity:
+        x = round(x, 1)
+        res_spa[x] = []
+
+    for x in data.values:
+        sensitivity[x[0]].append(x[2])
+
+    res = []
+
+    # 找到大于期望精度的最小值
+    for key, value in sensitivity.items():
+        proximal_arr = find_min_index(abs(np.array(value[1:]) - np.array([expect_acc] * len(value[1:]))))
+
+        best_index = proximal_arr[0] + 1
+        for i in range(best_index + 1, 10):
+            if value[i] >= value[proximal_arr[0] + 1]:
+                best_index = i
+        res.append(WInfo(key, sparsity[best_index]))
+
+    # 稀疏度固定为一位小数
+    for x in res:
+        x.sparsity = round(x.sparsity, 1)
+
+    res_temp = []
+    # 最后两层不剪枝
+    # res.remove(res[0])
+    res.remove(res[-1])
+    res.remove(res[-1])
+    # 带deep-wise残差块的剪第一层需要先看后面的deep-wise层
+    for i, winfo in enumerate(res):
+        # 第一个
+        if winfo.name == 'features.0.branch_proj.0.weight':
+            continue
+        elif winfo.name == 'features.0.branch_main.0.weight':
+            continue
+        # 第二个
+        elif winfo.name == 'features.3.branch_main.5.weight':
+            continue
+        elif winfo.name == 'features.4.branch_proj.0.weight':
+            continue
+        # 第三个
+        elif winfo.name == 'features.11.branch_main.5.weight':
+            continue
+        elif winfo.name == 'features.12.branch_proj.0.weight':
+            continue
+
+        elif winfo.name.find('branch_main.0.weight') != -1:
+            arr = winfo.name.split('.')
+            # print(arr)
+            arr[3] = '3'
+            dw_name = '.'.join(arr)
+            for info in res:
+                if info.name == dw_name:
+                    winfo.sparsity = min(winfo.sparsity, info.sparsity)
+                    info.sparsity = min(winfo.sparsity, info.sparsity)
+                    break
+            res_temp.append(winfo)
+        else:
+            res_temp.append(winfo)
+
+    # 网络的第一个卷积层也剪枝
+    # res_temp.append(res[0])
+
+    for x in res_temp:
+        res_spa[x.sparsity].append(x.name)
+
+    return res_spa
+
+
 def find_min_index(arr):
     min_index_arr = []
     min_value = 2
@@ -363,9 +416,9 @@ def find_min_index(arr):
 
 
 def main():
-    # config_yaml('/home/user1/linx/program/LightFaceNet/work_space/sensitivity_data/mobilenetv3_0.6613/sensitivity_mobilenetv3.csv', 0.40, mode='mobilenetv3')
-    config_yaml('/home/yeluyue/lz/program/compression_tool/work_space/sensitivity_data/mobilefacenet_y2_ljt_TYLG/L1Rank/sensitivity_mobilefacenet_y2_ljt_2020-09-15-16-35-TYLG.csv',
-                0.73, mode='mobilefacenet', img_size=(144, 122))
+    config_yaml('/home/linx/program/z-prunning/compression_tool/work_space/sensitivity_data'
+                '/shufflefacenet_v2_ljt_TYLG/FPGM/sensitivity_shufflefacenet_v2_ljt_2020-09-18-15-53.csv',
+                0.73, mode='shufflefacenet', img_size=(144, 122))
 
 
 if __name__ == '__main__':

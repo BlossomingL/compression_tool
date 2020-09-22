@@ -15,6 +15,54 @@ import torch
 # from ...common_utility import L2Norm, Flatten, GDC, get_shuffle_ave_pooling_size
 
 
+class L2Norm(Module):
+    def forward(self, input):
+        return F.normalize(input)
+
+
+class Flatten(Module):
+    def forward(self, input):
+        return input.view(input.size(0), -1)
+        # for onnx model convert
+        # batch_size = np.array(input.size(0))
+        # batch_size.astype(dtype=np.int32)
+        # return input.view(batch_size, 512)
+
+
+class GDC(nn.Module):
+    def __init__(self, in_c, out_c, kernel=(1, 1), stride=(1, 1), padding=(0, 0), groups=1):
+        super(GDC, self).__init__()
+        self.conv = nn.Conv2d(in_c, out_channels=out_c, kernel_size=kernel,
+                              groups=groups, stride=stride, padding=padding, bias=False)
+        self.bn = nn.BatchNorm2d(out_c)
+
+    def forward(self, x):
+        x = self.conv(x)
+        x = self.bn(x)
+        return x
+
+
+def get_shuffle_ave_pooling_size(height, width, using_pool=False):
+    first_batch_num = 2
+    if using_pool:
+        first_batch_num = 3
+
+    size1 = Get_Conv_kernel(height, width, (3, 3), (2, 2), (0, 0), first_batch_num)
+    # print(size1)
+    size2 = Get_Conv_kernel(size1[0], size1[1], (2, 2), (2, 2), (0, 0), 2)
+    return size2
+
+
+def Get_Conv_kernel(height, width, kernel, stride, padding, rpt_num):
+    conv_h = height
+    conv_w = width
+    for _ in range(rpt_num):
+        conv_h = math.ceil((conv_h - kernel[0] + 2 * padding[0]) / stride[0] + 1)
+        conv_w = math.ceil((conv_w - kernel[1] + 2 * padding[1]) / stride[1] + 1)
+        print(conv_h, conv_w)
+    return (int(conv_h), int(conv_w))
+
+
 class ShuffleV2Block(nn.Module):
     def __init__(self, inp, oup, mid_channels, *, ksize, stride, use_se=False):
         super(ShuffleV2Block, self).__init__()
@@ -63,7 +111,8 @@ class ShuffleV2Block(nn.Module):
     def forward(self, old_x):
         if self.stride == 1:
             x = self.channel_shuffle(old_x)
-            x_projs = torch.split(x, x.shape[1] // 2, dim=1)
+            # print(x.shape[1])
+            x_projs = torch.split(x, int(x.shape[1] // 2), dim=1)
             # x_projs = torch.split(old_x, old_x.shape[1] // 2, dim=1)
             return torch.cat((x_projs[0], self.branch_main(x_projs[1])), 1)
         elif self.stride == 2:
@@ -89,54 +138,6 @@ class ShuffleV2Block(nn.Module):
             x = x.permute(0, 2, 1, 3, 4).contiguous()
             x = x.view(n, c, h, w)
             return x
-
-
-class L2Norm(Module):
-    def forward(self, input):
-        return F.normalize(input)
-
-
-class Flatten(Module):
-    def forward(self, input):
-        return input.view(input.size(0), -1)
-        # for onnx model convert
-        # batch_size = np.array(input.size(0))
-        # batch_size.astype(dtype=np.int32)
-        # return input.view(batch_size, 512)
-
-
-class GDC(nn.Module):
-    def __init__(self, in_c, out_c, kernel=(1, 1), stride=(1, 1), padding=(0, 0), groups=1):
-        super(GDC, self).__init__()
-        self.conv = nn.Conv2d(in_c, out_channels=out_c, kernel_size=kernel,
-                              groups=groups, stride=stride, padding=padding, bias=False)
-        self.bn = nn.BatchNorm2d(out_c)
-
-    def forward(self, x):
-        x = self.conv(x)
-        x = self.bn(x)
-        return x
-
-
-def get_shuffle_ave_pooling_size(height, width, using_pool=False):
-    first_batch_num = 2
-    if using_pool:
-        first_batch_num = 3
-
-    size1 = Get_Conv_kernel(height, width, (3, 3), (2, 2), (0, 0), first_batch_num)
-    # print(size1)
-    size2 = Get_Conv_kernel(size1[0], size1[1], (2, 2), (2, 2), (0, 0), 2)
-    return size2
-
-
-def Get_Conv_kernel(height, width, kernel, stride, padding, rpt_num):
-    conv_h = height
-    conv_w = width
-    for _ in range(rpt_num):
-        conv_h = math.ceil((conv_h - kernel[0] + 2 * padding[0]) / stride[0] + 1)
-        conv_w = math.ceil((conv_w - kernel[1] + 2 * padding[1]) / stride[1] + 1)
-        print(conv_h, conv_w)
-    return (int(conv_h), int(conv_w))
 
 
 class ShuffleFaceNetV2(nn.Module):
@@ -233,7 +234,9 @@ class ShuffleFaceNetV2(nn.Module):
 
 if __name__ == '__main__':
     model = ShuffleFaceNetV2(512, 2.0, (144, 122))
-    state_dict = torch.load('/home/linx/model/ljt/2020-09-15-10-53_CombineMargin-ljt914-m0.9m0.4m0.15s64_le_re_0.4_144x122_2020-07-30-Full-CLEAN-0803-2-MIDDLE-30_ShuffleFaceNetA-2.0-d512_model_iter-76608_TYLG-0.7319_XCHoldClean-0.8198_BusIDPhoto-0.7310-noamp.pth')
+    state_dict = torch.load('/home/linx/model/ljt/2020-09-15-10-53_CombineMargin-ljt914-m0.9m0.4m0.15s64_le_re_0'
+                            '.4_144x122_2020-07-30-Full-CLEAN-0803-2-MIDDLE-30_ShuffleFaceNetA-2.0-d512_model_iter'
+                            '-76608_TYLG-0.7319_XCHoldClean-0.8198_BusIDPhoto-0.7310-noamp.pth')
     model.load_state_dict(state_dict)
 
 

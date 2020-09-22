@@ -14,10 +14,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pruning_tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pruning_tool.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ljt_shufflefacenet_v2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ljt_shufflefacenet_v2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model_define/load_state_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/load_state_dict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt/ShuffleFaceNetV2.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt/ShuffleFaceNetV2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_space/layers_out/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/layers_out/out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_mobilefacenet_y2_ljt.py" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_mobilefacenet_y2_ljt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yaml_file/auto_yaml.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/yaml_file/auto_yaml.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +52,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_ljt_TYLG/FPGM" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_XCH" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_TYLG" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_ljt_BUSID" />
+      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/mobilefacenet_y2_ljt_TYLG/FPGM" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt" />
       <recent name="$PROJECT_DIR$/work_space/head" />
@@ -58,15 +66,8 @@
       <recent name="$PROJECT_DIR$/data/test_data" />
       <recent name="$PROJECT_DIR$/work_space" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_XCH" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_TYLG" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_ljt_BUSID" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/mobilefacenet_y2_ljt_TYLG/FPGM" />
-      <recent name="$PROJECT_DIR$/work_space/sensitivity_data/mobilefacenet_y2_ljt_TYLG/L1Rank" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.make_pruned_mobilefacenet_y2_ljt">
+  <component name="RunManager" selected="Python.main">
     <configuration name="ShuffleFaceNetV2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pruning_tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,7 +123,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="--mode finetune --lr 0.01 --epoch 20 --train_data_path $PROJECT_DIR$/../../dataset/face_recognition/ms1m_10k --test_root_path $PROJECT_DIR$/../../dataset/face_recognition/ms1m_10k --model mobilefacenet_y2 --pruned_checkpoint $PROJECT_DIR$/work_space/pruned_model/model_mobilefacenet_y2.pt --head_path work_space/finetune/2020-09-03-10-06_mobilefacenet_y2_baseline/model/head_2020-09-03-21-16_accuracy:0.9866666666666667_step:182160_best_acc_lfw.pth --finetune_pruned_model --data_source lfw" />
+      <option name="PARAMETERS" value="--mode prune --model shufflefacenet_v2_ljt                   --save_model_pt --data_source company --fpgm --best_model_path $USER_HOME$/model/ljt/2020-09-15-10-53_CombineMargin-ljt914-m0.9m0.4m0.15s64_le_re_0.4_144x122_2020-07-30-Full-CLEAN-0803-2-MIDDLE-30_ShuffleFaceNetA-2.0-d512_model_iter-76608_TYLG-0.7319_XCHoldClean-0.8198_BusIDPhoto-0.7310-noamp.pth            --test_root_path $USER_HOME$/dataset/company_test_data/TYLG/le_re_0.4_144x122   --img_list_label_path $USER_HOME$/dataset/company_test_data/TYLG/id_life_image_list_bmppair.txt" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -193,7 +194,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="plot_csv" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="resnet_50" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pruning_tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -201,11 +202,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pruning_analysis_tools" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_define/resnet_50_ljt" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pruning_analysis_tools/plot_csv.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/resnet_50_ljt/resnet_50.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -217,23 +218,23 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.auto_make_yaml" />
-      <item itemvalue="Python.plot_csv" />
       <item itemvalue="Python.make_pruned_mobilefacenet_y2" />
       <item itemvalue="Python.make_pruned_mobilefacenet_lzc" />
       <item itemvalue="Python.make_pruned_mobilefacenet_y2_ljt" />
       <item itemvalue="Python.ShuffleFaceNetV2" />
+      <item itemvalue="Python.resnet_50" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.resnet_50" />
         <item itemvalue="Python.make_pruned_mobilefacenet_y2_ljt" />
         <item itemvalue="Python.ShuffleFaceNetV2" />
         <item itemvalue="Python.make_pruned_mobilefacenet_y2" />
         <item itemvalue="Python.make_pruned_mobilefacenet_lzc" />
-        <item itemvalue="Python.plot_csv" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="false" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -246,6 +247,9 @@
       <updated>1573023519035</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -260,67 +264,69 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="416" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599459086937">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600767563795">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1599181763592" />
+    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1600767563795" />
     <state x="416" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/69.24.1851.1056@69.24.1851.1056" timestamp="1599459086937" />
-    <state x="632" y="352" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600240574173">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state x="631" y="354" width="622" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600741391416">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
+    <state x="631" y="354" width="622" height="414" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1600741391416" />
     <state x="632" y="352" key="#com.intellij.fileTypes.FileTypeChooser/69.24.1851.1056@69.24.1851.1056" timestamp="1600240574173" />
     <state x="1188" y="357" key="FileChooserDialogImpl" timestamp="1599204527817">
       <screen x="69" y="24" width="1851" height="1056" />
     </state>
     <state x="1188" y="357" key="FileChooserDialogImpl/69.24.1851.1056@69.24.1851.1056" timestamp="1599204527817" />
-    <state width="1714" height="302" key="GridCell.Tab.0.bottom" timestamp="1600394368357">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.0.bottom" timestamp="1600767795824">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="315" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1600225795520" />
+    <state width="1826" height="305" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1600767795824" />
     <state width="1714" height="302" key="GridCell.Tab.0.bottom/69.24.1851.1056@69.24.1851.1056" timestamp="1600394368357" />
-    <state width="1714" height="302" key="GridCell.Tab.0.center" timestamp="1600394368350">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.0.center" timestamp="1600767795824">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="315" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1600225795520" />
+    <state width="1826" height="305" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1600767795824" />
     <state width="1714" height="302" key="GridCell.Tab.0.center/69.24.1851.1056@69.24.1851.1056" timestamp="1600394368350" />
-    <state width="1714" height="302" key="GridCell.Tab.0.left" timestamp="1600394368350">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.0.left" timestamp="1600767795823">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="315" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1600225795519" />
+    <state width="1826" height="305" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1600767795823" />
     <state width="1714" height="302" key="GridCell.Tab.0.left/69.24.1851.1056@69.24.1851.1056" timestamp="1600394368350" />
-    <state width="1714" height="302" key="GridCell.Tab.0.right" timestamp="1600394368357">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.0.right" timestamp="1600767795824">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="315" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1600225795520" />
+    <state width="1826" height="305" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1600767795824" />
     <state width="1714" height="302" key="GridCell.Tab.0.right/69.24.1851.1056@69.24.1851.1056" timestamp="1600394368357" />
-    <state width="1374" height="318" key="GridCell.Tab.1.bottom" timestamp="1599204269000">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.1.bottom" timestamp="1600767792310">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="320" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1598929674485" />
+    <state width="1826" height="305" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1600767792310" />
     <state width="1374" height="318" key="GridCell.Tab.1.bottom/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state width="1374" height="318" key="GridCell.Tab.1.center" timestamp="1599204269000">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.1.center" timestamp="1600767792310">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="320" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1598929674485" />
+    <state width="1826" height="305" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1600767792310" />
     <state width="1374" height="318" key="GridCell.Tab.1.center/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state width="1374" height="318" key="GridCell.Tab.1.left" timestamp="1599204269000">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.1.left" timestamp="1600767792310">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="320" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1598929674485" />
+    <state width="1826" height="305" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1600767792310" />
     <state width="1374" height="318" key="GridCell.Tab.1.left/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state width="1374" height="318" key="GridCell.Tab.1.right" timestamp="1599204269000">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="305" key="GridCell.Tab.1.right" timestamp="1600767792310">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1826" height="320" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1598929674485" />
+    <state width="1826" height="305" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1600767792310" />
     <state width="1374" height="318" key="GridCell.Tab.1.right/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state x="264" y="192" key="SettingsEditor" timestamp="1600240366092">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state x="262" y="195" key="SettingsEditor" timestamp="1600740495174">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="262" y="195" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1600225371998" />
+    <state x="262" y="195" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1600740495174" />
     <state x="264" y="192" key="SettingsEditor/69.24.1851.1056@69.24.1851.1056" timestamp="1600240366092" />
-    <state x="911" y="302" width="672" height="678" key="search.everywhere.popup" timestamp="1600393565471">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state x="910" y="304" width="673" height="677" key="search.everywhere.popup" timestamp="1600759182721">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
+    <state x="910" y="304" width="673" height="677" key="search.everywhere.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1600759182721" />
     <state x="911" y="302" width="672" height="678" key="search.everywhere.popup/69.24.1851.1056@69.24.1851.1056" timestamp="1600393565471" />
   </component>
 </project>
