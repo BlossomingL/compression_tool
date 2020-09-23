@@ -416,9 +416,9 @@ def find_min_index(arr):
 
 
 def main():
-    config_yaml('/home/linx/program/z-prunning/compression_tool/work_space/sensitivity_data/resnet_100_ljt/FPGM'
-                '/sensitivity_resnet_100_ljt_2020-09-23-08-25.csv',
-                0.925, mode='conv2', img_size=(144, 122))
+    config_yaml('/home/yeluyue/lz/program/compression_tool/work_space/sensitivity_data/resnet_50_ljt/fpgm'
+                '/sensitivity_resnet_50_ljt_2020-09-22-23-00.csv',
+                0.90, mode='conv2', img_size=(112, 112))
 
 
 if __name__ == '__main__':

@@ -227,7 +227,7 @@ class ResNet(nn.Module):
         # ks = ((input_size[0]+15)//16, (input_size[1]+15)//16)
         # print("kernel size{}".format(ks))
         # ks = 7
-        self.fc1 = nn.Conv2d(512*block.expansion, embedding_size, kernel_size=(9, 8), bias=False)
+        self.fc1 = nn.Conv2d(512*block.expansion, embedding_size, kernel_size=(7, 7), bias=False)
         # self.fc1 = GDC(512 * block.expansion, embedding_size, kernel=(ks, ks), groups=512)
         self.ft1 = Flatten()
         self.bn4 = nn.BatchNorm1d(embedding_size, eps=2e-5, momentum=0.9)

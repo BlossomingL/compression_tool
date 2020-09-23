@@ -88,7 +88,7 @@ def prune(args):
         acc = test(args, model)
         print('剪枝后acc为：{}'.format(acc))
 
-        flops, params = cal_flops(model, [1, 3, 144, 122])
+        flops, params = cal_flops(model, [1, 3, 112, 112])
         forward_time = 0
         print('剪枝后前向时间为{}ms, flops={}, params={}'.format(forward_time, flops, params))
 
