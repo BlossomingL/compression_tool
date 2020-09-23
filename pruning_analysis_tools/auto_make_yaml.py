@@ -84,7 +84,7 @@ def create_sparsity2weight_resnet_conv2(sparsity, data, expect_acc, mode):
     sensitivity = {}
 
     for x in data.values:
-        if (x[0].find('conv1') != -1 or x[0].find('conv2') != -1) and x[0].find('downsample') == -1:
+        if x[0].find('conv1') != -1 or x[0].find('conv2') != -1 or x[0].find('downsample') != -1:
             sensitivity[x[0]] = []
 
     res_spa = {}
@@ -93,7 +93,7 @@ def create_sparsity2weight_resnet_conv2(sparsity, data, expect_acc, mode):
         res_spa[x] = []
 
     for x in data.values:
-        if (x[0].find('conv1') != -1 or x[0].find('conv2') != -1) and x[0].find('downsample') == -1:
+        if x[0].find('conv1') != -1 or x[0].find('conv2') != -1 or x[0].find('downsample') != -1:
             sensitivity[x[0]].append(x[2])
 
     res = []
@@ -118,34 +118,34 @@ def create_sparsity2weight_resnet_conv2(sparsity, data, expect_acc, mode):
     min_arr = [1, 1, 1, 1]
     for x in res:
         if x.name.find('layer1'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 if x.sparsity < min_arr[0]:
                     min_arr[0] = x.sparsity
         elif x.name.find('layer2'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 if x.sparsity < min_arr[1]:
                     min_arr[1] = x.sparsity
         elif x.name.name.find('layer3'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 if x.sparsity < min_arr[2]:
                     min_arr[2] = x.sparsity
         elif x.name.find('layer4'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 if x.sparsity < min_arr[3]:
                     min_arr[3] = x.sparsity
 
     for x in res:
         if x.name.find('layer1'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 x.sparsity = min_arr[0]
         elif x.name.find('layer2'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 x.sparsity = min_arr[1]
         elif x.name.find('layer3'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 x.sparsity = min_arr[2]
         elif x.name.find('layer4'):
-            if x.name.find('conv2') != -1 and x.name.find('downsample') == -1:
+            if x.name.find('conv2') != -1 or x.name.find('downsample') != -1:
                 x.sparsity = min_arr[3]
 
     res[0].sparsity = min_arr[0]
@@ -416,11 +416,10 @@ def find_min_index(arr):
 
 
 def main():
-    config_yaml('/home/linx/program/z-prunning/compression_tool/work_space/sensitivity_data'
-                '/shufflefacenet_v2_ljt_TYLG/FPGM/sensitivity_shufflefacenet_v2_ljt_2020-09-18-15-53.csv',
-                0.73, mode='shufflefacenet', img_size=(144, 122))
+    config_yaml('/home/linx/program/z-prunning/compression_tool/work_space/sensitivity_data/resnet_100_ljt/FPGM'
+                '/sensitivity_resnet_100_ljt_2020-09-23-08-25.csv',
+                0.925, mode='conv2', img_size=(144, 122))
 
 
 if __name__ == '__main__':
     main()
-

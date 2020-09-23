@@ -11,9 +11,6 @@ python main.py    --mode sa \
                   --from_data_parallel
 
 
-
-
-
 # ================================ResNet-100==============================================================================
 python main.py    --mode sa \
                   --model resnet_100_ljt \
@@ -24,3 +21,13 @@ python main.py    --mode sa \
                   --fpgm \
                   --from_data_parallel
 
+
+python main.py    --mode prune \
+                  --model resnet_100_ljt \
+                  --save_model_pt \
+                  --data_source company \
+                  --fpgm \
+                  --best_model_path /home/linx/model/ljt/2020-06-27-12-59_CombineMargin-zk-O1D1Ls-m0.9m0.4m0.15s64_fc_0.4_144x122_2020-05-26-PNTMS-CLEAN-MIDDLE-70_fResNet100v3cv-d512_model_iter-96628_Idoa-0.8996_IdoaMask-0.9127_TYLG-0.9388.pth \
+                  --test_root_path /home/linx/dataset/company_test_data/TYLG/fc_0.4_144x122 \
+                  --img_list_label_path /home/linx/dataset/company_test_data/TYLG/id_life_image_list_bmppair.txt \
+                  --from_data_parallel

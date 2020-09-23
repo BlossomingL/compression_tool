@@ -506,13 +506,14 @@ def fresnet100_v3_ljt(**kwargs):
 
 
 if __name__ == '__main__':
-    model = fresnet50_v3_ljt()
-    state_dict = torch.load('/home/linx/model/ljt/2020-08-11-22-35_CombineMargin-ljt83-m0.9m0.4m0.15s64_le_re_0'
-                            '.4_144x122_2020-07-30-Full-CLEAN-0803-2-MIDDLE-30_fResNet50v3cv-d512_model_iter'
-                            '-76608_TYLG-0.8070_PadMaskYTBYGlassM280-0.9305_BusIDPhoto-0.6541.pth')
+    model = fresnet100_v3_ljt()
+    state_dict = torch.load('//home/linx/model/ljt/2020-06-27-12-59_CombineMargin-zk-O1D1Ls-m0.9m0.4m0.15s64_fc_0'
+                            '.4_144x122_2020-05-26-PNTMS-CLEAN-MIDDLE-70_fResNet100v3cv-d512_model_iter-96628_Idoa-0'
+                            '.8996_IdoaMask-0.9127_TYLG-0.9388.pth')
     new_state_dict = OrderedDict()
     for k, v in state_dict.items():
         new_state_dict[k[7:]] = v
+        print(k)
     model.load_state_dict(new_state_dict)
     # model_input = torch.rand([2, 3, 80, 80])
     # model.cuda()
