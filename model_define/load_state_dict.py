@@ -21,7 +21,7 @@ def load_state_dict(args):
         model = MobileFaceNet_sor(args.embedding_size)
 
     elif args.model == 'resnet34':
-        model = fresnet34_v3((112,112))
+        model = fresnet34_v3((112, 112))
         args.lr = 0.001
 
     elif args.model == 'mobilefacenet_y2':

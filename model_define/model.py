@@ -354,9 +354,10 @@ if __name__ == '__main__':
     # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # model = ResNet34().to(device)
     # summary(model, (3, 112, 112))
-    model = resnet50()
-    state_dict = torch.load('/home/user1/linx/program/LightFaceNet/work_space/models/model_train_best/2019-09-29-05'
-                            '-31_SVGArcFace-O1-b0.4s40t1.1_fc_0.4_112x112_2019-09-27-Adult-padSY-Bus_fResNet50v3cv'
-                            '-d512_pytorch_iter_360000.pth')
-    for k, v in state_dict.items():
-        print(k, v.shape)
+    model = MobileFaceNet_y2(512)
+    # state_dict = torch.load('/home/user1/linx/program/LightFaceNet/work_space/models/model_train_best/2019-09-29-05'
+    #                         '-31_SVGArcFace-O1-b0.4s40t1.1_fc_0.4_112x112_2019-09-27-Adult-padSY-Bus_fResNet50v3cv'
+    #                         '-d512_pytorch_iter_360000.pth')
+    # for k, v in state_dict.items():
+    #     print(k, v.shape)
+    model(torch.rand([1, 3, 112, 112]))

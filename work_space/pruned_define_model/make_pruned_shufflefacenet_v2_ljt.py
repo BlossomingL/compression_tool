@@ -141,7 +141,7 @@ class ShuffleV2Block(nn.Module):
 
 
 class ShuffleFaceNetV2(nn.Module):
-    def __init__(self, num_classes, width_multiplier, input_size, use_se=False):
+    def __init__(self, mid_arr, num_classes, width_multiplier, input_size, use_se=False):
         super(ShuffleFaceNetV2, self).__init__()
 
         gdc_size = get_shuffle_ave_pooling_size(input_size[0], input_size[1])
@@ -173,6 +173,7 @@ class ShuffleFaceNetV2(nn.Module):
         )
 
         self.features = []
+        count = 0
         for idxstage in range(len(self.stage_repeats)):
             numrepeat = self.stage_repeats[idxstage]
             output_channel = self.stage_out_channels[idxstage + 2]
@@ -180,15 +181,15 @@ class ShuffleFaceNetV2(nn.Module):
             for i in range(numrepeat):
                 if i == 0:
                     self.features.append(ShuffleV2Block(input_channel, output_channel,
-                                                        mid_channels=output_channel // 2, ksize=3, stride=2,
+                                                        mid_channels=mid_arr[count], ksize=3, stride=2,
                                                         use_se=self.use_se))
                 else:
                     self.features.append(ShuffleV2Block(input_channel // 2, output_channel,
-                                                        mid_channels=output_channel // 2, ksize=3, stride=1,
+                                                        mid_channels=mid_arr[count], ksize=3, stride=1,
                                                         use_se=self.use_se))
-
+                count += 1
                 input_channel = output_channel
-
+        print(count)
         self.features = nn.Sequential(*self.features)
 
         self.conv_last = nn.Sequential(
@@ -232,14 +233,21 @@ class ShuffleFaceNetV2(nn.Module):
         return x
 
 
+def Pruned_ShuffleFaceNetV2():
+    keep_dict = {'16.8M': [74, 25, 13, 13, 25, 49, 25, 196, 74, 74, 49, 74, 147, 49, 49, 49],
+                 '20.2M': [86, 49, 86, 37, 171, 98, 171, 220, 122, 122, 122, 122, 342, 147, 196, 147]}
+    mid_arr = keep_dict['20.2M']
+    model = ShuffleFaceNetV2(mid_arr, 512, 2.0, (144, 122))
+    return model
+
+
 if __name__ == '__main__':
-    model = ShuffleFaceNetV2(512, 2.0, (144, 122))
-    state_dict = torch.load('/home/linx/model/ljt/2020-09-15-10-53_CombineMargin-ljt914-m0.9m0.4m0.15s64_le_re_0'
-                            '.4_144x122_2020-07-30-Full-CLEAN-0803-2-MIDDLE-30_ShuffleFaceNetA-2.0-d512_model_iter'
-                            '-76608_TYLG-0.7319_XCHoldClean-0.8198_BusIDPhoto-0.7310-noamp.pth')
-    for k, v in state_dict.items():
-        if len(v.shape) == 4:
-            print(k, v.shape)
+
+    model = Pruned_ShuffleFaceNetV2()
+    state_dict = torch.load('/home/linx/program/z-prunning/compression_tool/work_space/pruned_model/model_shufflefacenet_v2_ljt.pt')
+    # for k, v in state_dict.items():
+    #     if len(v.shape) == 4:
+    #         print(k, v.shape)
     model.load_state_dict(state_dict)
     # print(model)
     # for param_name, param in model.named_parameters():

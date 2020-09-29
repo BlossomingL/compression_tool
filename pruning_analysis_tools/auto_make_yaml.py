@@ -105,6 +105,7 @@ def create_sparsity2weight_resnet_conv2(sparsity, data, expect_acc, mode):
             if value[i] >= value[proximal_arr[0] + 1]:
                 best_index = i
         res.append(WInfo(key, sparsity[best_index]))
+
         # for i, x in enumerate(value[1:]):
         #     if x < expect_acc:
         #         pos = i
@@ -364,8 +365,6 @@ def create_sparsity2weight_shufflefacenet(sparsity, data, expect_acc, mode):
         # 第一个
         if winfo.name == 'features.0.branch_proj.0.weight':
             continue
-        elif winfo.name == 'features.0.branch_main.0.weight':
-            continue
         # 第二个
         elif winfo.name == 'features.3.branch_main.5.weight':
             continue
@@ -388,9 +387,10 @@ def create_sparsity2weight_shufflefacenet(sparsity, data, expect_acc, mode):
                     info.sparsity = min(winfo.sparsity, info.sparsity)
                     break
             res_temp.append(winfo)
-        else:
+        # else:
+        #     res_temp.append(winfo)
+        elif winfo.name.find('branch_main.3.weight') != -1:
             res_temp.append(winfo)
-
     # 网络的第一个卷积层也剪枝
     # res_temp.append(res[0])
 
@@ -416,9 +416,9 @@ def find_min_index(arr):
 
 
 def main():
-    config_yaml('/home/yeluyue/lz/program/compression_tool/work_space/sensitivity_data/resnet_50_ljt/fpgm'
+    config_yaml('/home/linx/program/z-prunning/compression_tool/work_space/sensitivity_data/resnet_50_ljt/fpgm'
                 '/sensitivity_resnet_50_ljt_2020-09-22-23-00.csv',
-                0.90, mode='conv2', img_size=(112, 112))
+                0.99, mode='conv2', img_size=(112, 112))
 
 
 if __name__ == '__main__':

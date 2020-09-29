@@ -41,7 +41,8 @@ class face_learner(object):
 
         else:
             if args.model == 'mobilefacenet_y2':
-                self.model = Pruned_MobileFaceNet_y2(args.embedding_size).to(args.device)
+                self.model = MobileFaceNet_y2(args.embedding_size).to(args.device)
+                print(self.model(torch.rand([64, 3, 112, 112]).cuda()))
                 print('mobilefacenet_y2 mdoel generated')
             elif args.model == 'resnet50':
                 self.model = fresnet50_v3().to(args.device)

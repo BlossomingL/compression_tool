@@ -15,9 +15,9 @@ python main.py    --mode prune \
                   --save_model_pt \
                   --data_source company \
                   --fpgm \
-                  --best_model_path /home/yeluyue/lz/model/2020-06-26-12-13_CombineMargin-ljt-m0.9m0.4m0.15s64_le_re_0.4_112x112_2020-05-26-PNTMS-CLEAN-MIDDLE-70_fResNet50v3cv-d512_model_iter-113680_Idoa-0.8011_IdoaMask-0.8325_TYLG-0.8443.pth \
-                  --test_root_path /home/yeluyue/lz/dataset/200914_data_model_ljt/TYLG/le_re_0.4_112x112 \
-                  --img_list_label_path /home/yeluyue/lz/dataset/200914_data_model_ljt/TYLG/id_life_image_list_bmppair.txt \
+                  --best_model_path /home/linx/model/ljt/2020-06-26-12-13_CombineMargin-ljt-m0.9m0.4m0.15s64_le_re_0.4_112x112_2020-05-26-PNTMS-CLEAN-MIDDLE-70_fResNet50v3cv-d512_model_iter-113680_Idoa-0.8011_IdoaMask-0.8325_TYLG-0.8443.pth \
+                  --test_root_path /home/linx/dataset/company_test_data/TYLG/le_re_0.4_112x112 \
+                  --img_list_label_path /home/linx/dataset/company_test_data/TYLG/id_life_image_list_bmppair.txt \
                   --from_data_parallel
 
 # ================================ResNet-100==============================================================================

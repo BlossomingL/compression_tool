@@ -74,9 +74,14 @@ def prune(args):
         torch.save(model.state_dict(), os.path.join(args.pruned_save_model_path, 'model_{}.pt'.format(args.model)))
         print('模型已保存！')
         config_model_arr = []
-        for k, v in model.state_dict().items():
-            if len(v.shape) == 4 and k.find('downsample') == -1 and k.find('fc') == -1:
-                config_model_arr.append(v.shape[0])
+        if args.model != 'shufflefacenet_v2_ljt':
+            for k, v in model.state_dict().items():
+                if len(v.shape) == 4 and k.find('downsample') == -1 and k.find('fc') == -1:
+                    config_model_arr.append(v.shape[0])
+        else:
+            for k, v in model.state_dict().items():
+                if k.find('branch_main.0.weight') != -1:
+                    config_model_arr.append(v.shape[0])
         print('网络每层out参数为：{}, 总共{}个参数'.format(config_model_arr, len(config_model_arr)))
 
         if not os.path.exists('work_space/layers_out/'):

@@ -14,11 +14,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/pruning_tool.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pruning_tool.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model_define/resnet_50_ljt/resnet_50.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/resnet_50_ljt/resnet_50.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/load_state_dict.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/load_state_dict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt/ShuffleFaceNetV2.py" beforeDir="false" afterPath="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt/ShuffleFaceNetV2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pruning.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruning.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" beforeDir="false" afterPath="$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resnet_ljt.sh" beforeDir="false" afterPath="$PROJECT_DIR$/resnet_ljt.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_module/train_with_insight_face.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_module/train_with_insight_face.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work_space/layers_out/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/layers_out/out.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_TYLG/sensitivity_shufflefacenet_v2_ljt_2020-09-16-19-30.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_XCH/sensitivity_shufflefacenet_v2_ljt_2020-09-17-02-47.csv" beforeDir="false" afterPath="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_ljt_XCH/sensitivity_shufflefacenet_v2_ljt_2020-09-17-02-47.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yaml_file/auto_yaml.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/yaml_file/auto_yaml.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,19 +52,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt" />
-      <recent name="$PROJECT_DIR$/work_space/head" />
-      <recent name="$PROJECT_DIR$/work_space/model_train_best" />
-      <recent name="$PROJECT_DIR$/data/test_data" />
-      <recent name="$PROJECT_DIR$/work_space" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet_50_ljt/fpgm" />
       <recent name="$PROJECT_DIR$/work_space/sensitivity_data/resnet_50_ljt" />
@@ -66,8 +65,36 @@
       <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_ljt_TYLG/FPGM" />
       <recent name="$PROJECT_DIR$/work_space/sensitivity_data/shufflefacenet_v2_XCH" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt" />
+      <recent name="$PROJECT_DIR$/work_space/head" />
+      <recent name="$PROJECT_DIR$/work_space/model_train_best" />
+      <recent name="$PROJECT_DIR$/data/test_data" />
+      <recent name="$PROJECT_DIR$/work_space" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.make_pruned_resnet_50_ljt">
+  <component name="RunManager" selected="Python.model">
+    <configuration name="ShuffleFaceNetV2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="pruning_tool" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/shufflefacenet_v2_ljt/ShuffleFaceNetV2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="auto_make_yaml" type="PythonConfigurationType" factoryName="Python">
       <module name="pruning_tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -102,28 +129,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="--mode prune --model resnet_100_ljt --save_model_pt --data_source company --fpgm --best_model_path $USER_HOME$/model/ljt/2020-06-27-12-59_CombineMargin-zk-O1D1Ls-m0.9m0.4m0.15s64_fc_0.4_144x122_2020-05-26-PNTMS-CLEAN-MIDDLE-70_fResNet100v3cv-d512_model_iter-96628_Idoa-0.8996_IdoaMask-0.9127_TYLG-0.9388.pth --test_root_path $USER_HOME$/dataset/company_test_data/TYLG/fc_0.4_144x122 --img_list_label_path $USER_HOME$/dataset/company_test_data/TYLG/id_life_image_list_bmppair.txt --from_data_parallel" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="make_pruned_mobilefacenet_y2_ljt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="pruning_tool" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/work_space/pruned_define_model" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_mobilefacenet_y2_ljt.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="--mode prune --model shufflefacenet_v2_ljt --save_model_pt --data_source company --fpgm --best_model_path $USER_HOME$/model/ljt/2020-09-15-10-53_CombineMargin-ljt914-m0.9m0.4m0.15s64_le_re_0.4_144x122_2020-07-30-Full-CLEAN-0803-2-MIDDLE-30_ShuffleFaceNetA-2.0-d512_model_iter-76608_TYLG-0.7319_XCHoldClean-0.8198_BusIDPhoto-0.7310-noamp.pth --test_root_path $USER_HOME$/dataset/company_test_data/TYLG/le_re_0.4_144x122 --img_list_label_path $USER_HOME$/dataset/company_test_data/TYLG/id_life_image_list_bmppair.txt" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -173,7 +179,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="resnet_100" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="make_pruned_shufflefacenet_v2_ljt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pruning_tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,11 +187,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_define/resnet_100_ljt" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/work_space/pruned_define_model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/resnet_100_ljt/resnet_100.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work_space/pruned_define_model/make_pruned_shufflefacenet_v2_ljt.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,7 +200,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="resnet_50" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="pruning_tool" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -202,11 +208,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_define/resnet_50_ljt" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model_define" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/resnet_50_ljt/resnet_50.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model_define/model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -216,25 +222,25 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
       <item itemvalue="Python.auto_make_yaml" />
-      <item itemvalue="Python.make_pruned_mobilefacenet_y2_ljt" />
-      <item itemvalue="Python.resnet_50" />
-      <item itemvalue="Python.resnet_100" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.ShuffleFaceNetV2" />
       <item itemvalue="Python.make_pruned_resnet_100_ljt" />
       <item itemvalue="Python.make_pruned_resnet_50_ljt" />
+      <item itemvalue="Python.make_pruned_shufflefacenet_v2_ljt" />
+      <item itemvalue="Python.model" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.model" />
+        <item itemvalue="Python.make_pruned_shufflefacenet_v2_ljt" />
+        <item itemvalue="Python.ShuffleFaceNetV2" />
         <item itemvalue="Python.make_pruned_resnet_50_ljt" />
         <item itemvalue="Python.make_pruned_resnet_100_ljt" />
-        <item itemvalue="Python.resnet_100" />
-        <item itemvalue="Python.resnet_50" />
-        <item itemvalue="Python.make_pruned_mobilefacenet_y2_ljt" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -264,73 +270,77 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600827344769">
+    <state x="393" y="231" width="1082" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600927710263">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="393" y="229" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1600827344769" />
+    <state x="393" y="231" width="1082" height="682" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1600927710263" />
     <state x="416" y="200" key="#com.intellij.execution.impl.EditConfigurationsDialog/69.24.1851.1056@69.24.1851.1056" timestamp="1599459086937" />
-    <state x="631" y="354" width="622" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600741391416">
+    <state x="631" y="354" width="748" height="414" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600927803984">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="631" y="354" width="622" height="414" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1600741391416" />
+    <state x="631" y="354" width="748" height="414" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1600927803984" />
     <state x="632" y="352" key="#com.intellij.fileTypes.FileTypeChooser/69.24.1851.1056@69.24.1851.1056" timestamp="1600240574173" />
     <state x="794" y="284" key="#xdebugger.evaluate" timestamp="1600824087880">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="794" y="284" key="#xdebugger.evaluate/67.27.1853.1053@67.27.1853.1053" timestamp="1600824087880" />
-    <state width="1851" height="582" key="DebuggerActiveHint" timestamp="1600827384705">
+    <state width="1851" height="582" key="DebuggerActiveHint" timestamp="1600845647761">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1851" height="582" key="DebuggerActiveHint/67.27.1853.1053@67.27.1853.1053" timestamp="1600827384704" />
+    <state width="1851" height="582" key="DebuggerActiveHint/67.27.1853.1053@67.27.1853.1053" timestamp="1600845647761" />
     <state x="1188" y="357" key="FileChooserDialogImpl" timestamp="1599204527817">
       <screen x="69" y="24" width="1851" height="1056" />
     </state>
     <state x="1188" y="357" key="FileChooserDialogImpl/69.24.1851.1056@69.24.1851.1056" timestamp="1599204527817" />
-    <state width="1714" height="370" key="GridCell.Tab.0.bottom" timestamp="1600841480193">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="276" key="GridCell.Tab.0.bottom" timestamp="1601178510230">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1630" height="270" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1600832554672" />
+    <state width="1826" height="276" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1601178510230" />
     <state width="1714" height="370" key="GridCell.Tab.0.bottom/69.24.1851.1056@69.24.1851.1056" timestamp="1600841480193" />
-    <state width="1714" height="370" key="GridCell.Tab.0.center" timestamp="1600841480192">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="276" key="GridCell.Tab.0.center" timestamp="1601178510230">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1630" height="270" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1600832554672" />
+    <state width="1826" height="276" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1601178510230" />
     <state width="1714" height="370" key="GridCell.Tab.0.center/69.24.1851.1056@69.24.1851.1056" timestamp="1600841480192" />
-    <state width="1714" height="370" key="GridCell.Tab.0.left" timestamp="1600841480192">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="276" key="GridCell.Tab.0.left" timestamp="1601178510229">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1630" height="270" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1600832554671" />
+    <state width="1826" height="276" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1601178510229" />
     <state width="1714" height="370" key="GridCell.Tab.0.left/69.24.1851.1056@69.24.1851.1056" timestamp="1600841480192" />
-    <state width="1714" height="370" key="GridCell.Tab.0.right" timestamp="1600841480192">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state width="1826" height="276" key="GridCell.Tab.0.right" timestamp="1601178510230">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1630" height="270" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1600832554672" />
+    <state width="1826" height="276" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1601178510230" />
     <state width="1714" height="370" key="GridCell.Tab.0.right/69.24.1851.1056@69.24.1851.1056" timestamp="1600841480192" />
-    <state width="1628" height="371" key="GridCell.Tab.1.bottom" timestamp="1600828644304">
+    <state width="1826" height="478" key="GridCell.Tab.1.bottom" timestamp="1601015493188">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1628" height="371" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1600828644304" />
+    <state width="1826" height="478" key="GridCell.Tab.1.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1601015493188" />
     <state width="1374" height="318" key="GridCell.Tab.1.bottom/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state width="1628" height="371" key="GridCell.Tab.1.center" timestamp="1600828644304">
+    <state width="1826" height="478" key="GridCell.Tab.1.center" timestamp="1601015493187">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1628" height="371" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1600828644304" />
+    <state width="1826" height="478" key="GridCell.Tab.1.center/67.27.1853.1053@67.27.1853.1053" timestamp="1601015493187" />
     <state width="1374" height="318" key="GridCell.Tab.1.center/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state width="1628" height="371" key="GridCell.Tab.1.left" timestamp="1600828644303">
+    <state width="1826" height="478" key="GridCell.Tab.1.left" timestamp="1601015493187">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1628" height="371" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1600828644303" />
+    <state width="1826" height="478" key="GridCell.Tab.1.left/67.27.1853.1053@67.27.1853.1053" timestamp="1601015493187" />
     <state width="1374" height="318" key="GridCell.Tab.1.left/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state width="1628" height="371" key="GridCell.Tab.1.right" timestamp="1600828644304">
+    <state width="1826" height="478" key="GridCell.Tab.1.right" timestamp="1601015493187">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1628" height="371" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1600828644304" />
+    <state width="1826" height="478" key="GridCell.Tab.1.right/67.27.1853.1053@67.27.1853.1053" timestamp="1601015493187" />
     <state width="1374" height="318" key="GridCell.Tab.1.right/69.24.1851.1056@69.24.1851.1056" timestamp="1599204269000" />
-    <state x="264" y="192" key="SettingsEditor" timestamp="1600832784173">
-      <screen x="69" y="24" width="1851" height="1056" />
+    <state x="262" y="195" key="SettingsEditor" timestamp="1600844500436">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="262" y="195" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1600740495174" />
+    <state x="262" y="195" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1600844500436" />
     <state x="264" y="192" key="SettingsEditor/69.24.1851.1056@69.24.1851.1056" timestamp="1600832784173" />
+    <state width="926" height="527" key="XDebugger.FullValuePopup" timestamp="1600848456009">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state width="926" height="527" key="XDebugger.FullValuePopup/67.27.1853.1053@67.27.1853.1053" timestamp="1600848456009" />
     <state x="910" y="304" width="673" height="677" key="search.everywhere.popup" timestamp="1600759182721">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -342,8 +352,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>jar://$USER_HOME$/anaconda3/envs/torch1.1.0/lib/python3.6/site-packages/distiller-0.4.0rc0-py3.6.egg!/distiller/thinning.py</url>
-          <line>390</line>
-          <option name="timeStamp" value="43" />
+          <line>324</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/pruning_analysis_tools/auto_make_yaml.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
