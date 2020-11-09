@@ -1,11 +1,11 @@
 # compression_tool
 A compression tool for minivision
-
+- [x] VGG
+- [x] ResNet
+- [x] MobileFaceNet
+- [x] ShuffleNet_v2
 ## Install
-git clone https://github.com/BlossomingL/Distiller  
 git clone https://github.com/BlossomingL/compression_tool  
-
-安装Distiller：在Distiller文件下，python setup.py install  
 
 环境：pytorch 1.X  
 
