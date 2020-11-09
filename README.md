@@ -1,15 +1,16 @@
 # compression_tool
-A compression tool for minivision
+A compression tool for minivision  
 支持以下模型剪枝
 - [x] VGG
 - [x] ResNet
 - [x] MobileFaceNet
-- [x] ShuffleNet_v2  
+- [x] ShuffleNet_v2
 支持以下剪枝算法
 - [x] L1Rank
 - [x] FPGM
 - [x] HRank
-- [ ] EagleEye(暂未放出)
+- [ ] EagleEye(暂未放出)  
+
 ## Install
 git clone https://github.com/BlossomingL/compression_tool  
 
