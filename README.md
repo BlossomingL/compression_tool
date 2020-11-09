@@ -18,7 +18,6 @@ git clone https://github.com/BlossomingL/compression_tool
 
 ## 程序文件列表和文件功能  
 * commen_utils: 一些常用的工具方法  
-* commen_utils: 一些常用的工具方法
 * data: 存放测试数据集和训练数据集，以及需要的pair list
 * model_define: 存放待剪枝的模型定义文件
 * pruning_analysis_tools: 两个剪枝分析工具，auto_make_yaml.py根据得到的csv文件自动生成yaml配置文件,plot_csv.py根据csv文件画出敏感度折线图。
