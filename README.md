@@ -1,11 +1,11 @@
 # compression_tool
 A compression tool for minivision  
-支持以下模型剪枝  
+* 支持以下模型剪枝  
 - [x] VGG
 - [x] ResNet
 - [x] MobileFaceNet
 - [x] ShuffleNet_v2  
-支持以下剪枝算法
+* 支持以下剪枝算法
 - [x] L1Rank
 - [x] FPGM
 - [x] HRank
